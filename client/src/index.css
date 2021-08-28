@@ -131,11 +131,11 @@ footer {
 
 .image-cropper {
   max-width: 500px;
-  max-height: 300px;
+  max-height: 400px; 
   position: relative;
   overflow: hidden;
   border-radius: 5%;
-  padding-left: 20px;
+  padding: 0!important;
 }
 
 .city-pic {
@@ -429,6 +429,10 @@ footer {
 .home-logo {
   max-width: 30px;
   margin-right: 10px;
+}
+
+.sign-info {
+  margin-right: 30px;
 }
 
 /* Media queries */

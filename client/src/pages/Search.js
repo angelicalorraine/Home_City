@@ -362,23 +362,25 @@ const Search = () => {
           //disabled save city button if logged in and search result is already saved
           
           return <div key={city.matching_full_name}>
-            <Grid stackable columns={2}>
+            <Grid className="mb-4" stackable columns={2}>
               <Grid.Column>
                 <div >
                   <h2>
-                    City: {city.matching_full_name}
+                    {city.matching_full_name}
                   </h2>
 
 
                   {Auth.loggedIn() ? (<div></div>) :
                     (
+                      <div className="sign-info">
                       <Message
                           info
                           content="Sign up or login using the link in the header for the ability to create a profile page and save cities to compare."
                         />
+                        </div>
                       )
                   }
-
+                  <div className="mb-4">
                   {
 
                     Auth.loggedIn() &&
@@ -408,11 +410,13 @@ const Search = () => {
                     </Button>
 
                   }
-                  <Statistic>
-                        <Statistic.Label>Population</Statistic.Label>
-                        <Statistic.Value>{city.population}</Statistic.Value>
-                  </Statistic>  
-
+                  </div>
+                  <div className="mb-4">
+                    <Statistic>
+                          <Statistic.Label>Population</Statistic.Label>
+                          <Statistic.Value>{city.population}</Statistic.Value>
+                    </Statistic>  
+                  </div>
                   <div>
                     <span className="bold">Region: </span><span>{city.region}</span>
                   </div>
@@ -451,8 +455,8 @@ const Search = () => {
             </Grid>
 
 
-            <Container className="mt-4">
-              <div>
+            <Container className="mt-4 mb-4">
+              <div className="mt-4">
                 <Bar
                   data={{
                     labels: ['Healthcare', 'Taxation', 'Education', 'Housing', 'Living', 'Safety', 'Environment', 'Economy'],
@@ -486,6 +490,7 @@ const Search = () => {
                   width={500}
                   options={{
                     plugins: {
+                  
                       legend: {
                         display: false
                       }
@@ -506,8 +511,8 @@ const Search = () => {
           </div>
         })):(
           <Message negative>
-            <Message.Header>No results found</Message.Header>
-            <p>try a different city</p>
+            <Message.Header>No cities found</Message.Header>
+            <p>Try searching for a different city.</p>
           </Message>
         )}
 
