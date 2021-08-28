@@ -408,7 +408,6 @@ const Search = () => {
                         : 'Set as Home City'
                       }
                     </Button>
-
                   }
                   </div>
                   <div className="mb-4">
