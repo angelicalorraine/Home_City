@@ -364,7 +364,7 @@ const Search = () => {
           return <div key={city.matching_full_name}>
             <Grid className="mb-4" stackable columns={2}>
               <Grid.Column>
-                <div >
+                
                   <h2>
                     {city.matching_full_name}
                   </h2>
