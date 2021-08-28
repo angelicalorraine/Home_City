@@ -24,17 +24,17 @@ const Profile = () => {
   const userData = data?.me || {};
   console.log(userData);
 
-  if (!userData?.username) {
-    return (
-      <div className="p-5">
-        <Message negative>
-          <Message.Header>Additional privileges needed in order to view this page</Message.Header>
-          <p>You must to be logged in to view this page. Use navigation links above to
-            sign up or log in.</p>
-        </Message>
-      </div>
-    );
-  }
+  // if (!userData?.username) {
+  //   return (
+  //     <div className="p-5">
+  //       <Message negative>
+  //         <Message.Header>Additional privileges needed in order to view this page</Message.Header>
+  //         <p>You must to be logged in to view this page. Use navigation links above to
+  //           sign up or log in.</p>
+  //       </Message>
+  //     </div>
+  //   );
+  // }
 
 
 
