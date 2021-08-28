@@ -76,13 +76,15 @@ const Profile = () => {
             <Container>
               <Card fluid>
                 <Card.Content className="text-left">
-                  <Card.Header><h1>{data.me.username}</h1></Card.Header>
-                  <Card.Meta>{data.me.email}</Card.Meta>
-                  <Card.Description>
+                  <Card.Header className="mb-2"><h1>{data.me.username}</h1></Card.Header>
+                  <Card.Meta className="mb-3">{data.me.email}</Card.Meta>
+                  <Card.Meta className="mb-3">{data.me.homeCity &&
+                    <h3>{data.me.username} is currently living in {data.me.homeCity.name.split(',')[0]}.</h3>}</Card.Meta>
+                  {/* <Card.Description className="text-left">
                     {data.me.homeCity &&
                       <h3>{data.me.username} is currently living in {data.me.homeCity.name.split(',')[0]}.</h3>}
 
-                  </Card.Description>
+                  </Card.Description> */}
 
                 </Card.Content>
                 <Card.Content extra>
@@ -105,15 +107,16 @@ const Profile = () => {
               </Card>
               {
                 data.me.homeCity
-                  ? <Card fluid className="mb-5">
+                  ? <Card fluid className="mb-4">
                     <Image src={data.me.homeCity.image} wrapped ui={false} />
                     <Card.Content>
-                      <Card.Header>{data.me.homeCity.name.split(',')[0]}</Card.Header>
-                      <Card.Meta className="mb-4">{data.me.homeCity.name}</Card.Meta>
+                      <Card.Meta className="mb-2">Home City</Card.Meta>
+                      <Card.Header className="mb-4">{data.me.homeCity.region}</Card.Header>
+
                       <Card.Description >
-                        <Statistic size='small'>
+                        <Statistic size="tiny">
                           <Statistic.Label >Population</Statistic.Label>
-                          <Statistic.Value className="population">{numbersWithCommas(data.me.homeCity.population)}</Statistic.Value>
+                          <Statistic.Value className="population mb-3">{numbersWithCommas(data.me.homeCity.population)}</Statistic.Value>
                         </Statistic>
                       </Card.Description>
                       {<Bar
@@ -143,7 +146,7 @@ const Profile = () => {
                               borderWidth: 1
                             }]
                         }}
-                        height={60}
+                        height={70}
                         width={200}
                         options={
                           {
