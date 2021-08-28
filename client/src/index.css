@@ -1,5 +1,4 @@
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -7,6 +6,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 25px;
   cursor: default;
+  height: 100%;
 }
 
 code {
@@ -18,7 +18,7 @@ footer {
   text-align: right;
   font-size: 1rem;
   padding: 1%;
-  position: fixed;
+  position: sticky;
   bottom: 0;
   left: 0;
   right: 0;
@@ -341,21 +341,21 @@ footer {
 }
 
 .modal .nav-pills .nav-link {
-    font-size: 1rem;
-    line-height: 1.5;
-    font-weight: normal;
-    border: 1px solid transparent;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-    margin-bottom: -2px;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: normal;
+  border: 1px solid transparent;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-bottom: -2px;
 }
 
 .modal .nav-item .active {
-    font-weight: normal;
-    background: #fff !important;
-    color: rgba(0,0,0,.95);
-    border-color: #ccc;
-    border-bottom: none;
+  font-weight: normal;
+  background: #fff !important;
+  color: rgba(0, 0, 0, 0.95);
+  border-color: #ccc;
+  border-bottom: none;
 }
 
 .modal .nav-link {
@@ -427,6 +427,12 @@ footer {
   margin-right: 10px;
 }
 
+.bannerHeader {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
 /* Media queries */
 @media screen and (max-width: 768px) {
   .my-5 .card {
@@ -441,4 +447,21 @@ footer {
   .suggestions-list {
     max-height: calc(100vh - 400px);
   }
+}
+.bannerIcon {
+  margin-top: 1rem;
+  color: rgb(47 153 160) !important;
+}
+
+.description {
+  text-align: center !important;
+  line-height: 30px;
+}
+
+.bannerCard {
+  box-shadow: 0px 1px 7px 7px rgba(61, 109, 99, 0.2) !important;
+}
+
+.fa-3x {
+  font-size: 5rem !important;
 }
