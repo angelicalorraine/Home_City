@@ -455,6 +455,7 @@ const Search = () => {
 
 
             <Container className="mt-4">
+            <h3>{city.matching_full_name}</h3>
               <div>
                 <Bar
                   data={{
@@ -489,10 +490,7 @@ const Search = () => {
                   width={500}
                   options={{
                     plugins: {
-                       title: {
-                        display: true,
-                        text: `${city.matching_full_name}`,
-                        },
+                  
                       legend: {
                         display: false
                       }
@@ -513,8 +511,8 @@ const Search = () => {
           </div>
         })):(
           <Message negative>
-            <Message.Header>No results found</Message.Header>
-            <p>try a different city</p>
+            <Message.Header>No cities found</Message.Header>
+            <p>Try searching for a different city.</p>
           </Message>
         )}
 
