@@ -131,11 +131,11 @@ footer {
 
 .image-cropper {
   max-width: 500px;
-  max-height: 300px;
+  max-height: 400px;
   position: relative;
   overflow: hidden;
   border-radius: 5%;
-  padding-left: 20px;
+  padding: 0 !important;
 }
 
 .city-pic {
@@ -335,6 +335,11 @@ footer {
   text-align: left;
 }
 
+.extra.content span {
+  font-size: 1.3rem;
+  padding-left: 10px;
+}
+
 .modal .nav-pills {
   padding-left: 15px;
   border-bottom: 1px solid #ccc;
@@ -376,6 +381,11 @@ footer {
 
 .ui.container:empty {
   display: none;
+}
+
+.ui.message,
+.ui.fluid.dropdown {
+  font-size: 1rem;
 }
 
 .my-5 .card {
@@ -431,6 +441,9 @@ footer {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
+}
+.sign-info {
+  margin-right: 30px;
 }
 
 /* Media queries */

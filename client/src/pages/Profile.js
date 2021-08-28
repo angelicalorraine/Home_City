@@ -88,7 +88,8 @@ const Profile = () => {
                 <Card.Content extra>
                   <div className="display-flex align-center ">
                     <Icon disabled name='building' size='large' />
-                    <span>{data.me.savedCities.length} saved cities</span>
+                    <span>{data.me.savedCities.length}&nbsp; 
+                    {data.me.savedCities.length === 1 ? 'city' : 'cities'} saved</span>
                   </div>
                 </Card.Content>
                 {
@@ -175,7 +176,8 @@ const Profile = () => {
               <h2> City Compare</h2>
               <CityTable />
             </Container>
-            <Container className="data"> <h2> Your {userData.cityCount} Saved Cities!</h2> </Container>
+            <Container className="data"> <h2>  
+            {userData.cityCount > 0 ? `Your ${userData.cityCount} Saved Cities!` : 'You have 0 saved cities.'} </h2> </Container>
 
             <Container className="scores">
               <Tab.Container className="" sm={12} id="left-tabs-example" >
@@ -186,7 +188,7 @@ const Profile = () => {
                         return (
                           <Tab.Pane eventKey={city.cityId} transition={Fade}>
                             <Row className="CityChartName">
-                              <h3> Viewing {city.name}
+                              <h3>{city.name}
                                 <Button variant="outline-danger delete" size="sm" onClick={() => handleDeleteCity(city.cityId)}>
                                   Delete city
                                 </Button></h3>
@@ -224,6 +226,7 @@ const Profile = () => {
                               options={
                                 {
                                   plugins: {
+                            
                                     legend: {
                                       display: false
                                     }
