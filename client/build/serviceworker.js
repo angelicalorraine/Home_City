@@ -1,4 +1,4 @@
-let CACHE_NAME = 'version-1';
+let CACHE_NAME = 'HomeCity';
 let urlsToCache = [
     'index.html',
     'offlne.html',
@@ -14,4 +14,33 @@ self.addEventListener('install', event => {
                 return cache.addAll(urlsToCache);
             })
     );
+});
+
+self.addEventListener('fetch', event => {
+    event.respondWith(
+        caches.match(event.request)
+            .then(() => {
+                // Cache hit - return response
+                return fetch(event.request)
+                    .catch(() => caches.match('offline.html'))
+
+            })
+    );
+});
+
+// Update a service worker
+self.addEventListener('activate', (event) => {
+    const cacheWhitelist = [];
+    cacheWhitelist.push(CACHE_NAME);
+
+    event.waitUntil(
+        caches.keys().then((cacheNames) => Promise.all(
+            cacheNames.map((cacheName) => {
+                if (!cacheWhitelist.includes(cacheName)) {
+                    return caches.delete(cacheName);
+                }
+            })
+        ))
+
+    )
 });

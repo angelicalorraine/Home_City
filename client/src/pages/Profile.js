@@ -175,12 +175,14 @@ const Profile = () => {
 
           </Col>
           <Col sm={12} md={7} className="mt-3">
+            <Container className="data"> <h2 className="overview"> Saved City Overview</h2> {'\n'}
+              <h3 className="overviewCity">  {userData.cityCount > 0 ? `Your ${userData.cityCount} Saved Cities!` : 'You have 0 saved cities.'} </h3>
+            </Container>
             <Container className="scores">
               <h2> City Compare</h2>
               <CityTable />
             </Container>
-            <Container className="data"> <h2>
-              {userData.cityCount > 0 ? `Your ${userData.cityCount} Saved Cities!` : 'You have 0 saved cities.'} </h2> </Container>
+
 
             <Container className="scores">
               <Tab.Container className="" sm={12} id="left-tabs-example" >
