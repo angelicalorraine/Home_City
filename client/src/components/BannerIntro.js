@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChartBar, faCity, faSearch } from "@fortawesome/free-solid-svg-icons";
 import BannerCard from "./BannerCard";
-import BannerContainer from "./BannerContainer";
 import { Container } from 'react-bootstrap';
 const BannerIntro = () => {
   let bannerCards = [
@@ -31,9 +30,7 @@ const BannerIntro = () => {
           {bannerCards.map((bannerCard, i) => <BannerCard key={i} {...bannerCard} />)}
         </div>
       </Container>
-      <Container>
-        <BannerContainer />
-      </Container>
+
     </>
   )
 }
