@@ -15,14 +15,19 @@ code {
 }
 
 footer {
-  text-align: right;
   font-size: 1rem;
   padding: 1%;
-  position: sticky;
+
   bottom: 0;
   left: 0;
   right: 0;
-  color: #000;
+  background-image: linear-gradient(
+    to right,
+    #3bb6a1 0%,
+    #31a0a0 45%,
+    #185a9d 105%
+  );
+  text-align: center;
 }
 
 .bold {
@@ -256,10 +261,6 @@ table.table-striped > tbody > tr:nth-of-type(even):hover {
   margin-left: 1rem;
 }
 
-footer {
-  text-align: center;
-}
-
 .autoComplete {
   padding: 50px 20px;
 }
@@ -326,7 +327,7 @@ footer {
 }
 
 .jumbotron .ui.card > .extra i {
-  color: #43cea2;
+  color: rgb(47 153 160) !important;
 }
 
 .extra.content,
@@ -346,7 +347,7 @@ footer {
 }
 
 .modal .nav-pills .nav-link {
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.5;
   font-weight: normal;
   border: 1px solid transparent;
@@ -370,13 +371,18 @@ footer {
 .scores .nav.nav-pills {
   border-radius: 0.28571429rem;
   line-height: 1.2;
-  background-color: #43cea2;
+  background-color: #2e93a1;
   margin: 1px 3px;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 .scores .nav.nav-pills .nav-link {
   color: #fff;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #43cea2;
 }
 
 .ui.container:empty {
