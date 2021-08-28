@@ -111,9 +111,9 @@ const Profile = () => {
                       <Card.Header>{data.me.homeCity.name.split(',')[0]}</Card.Header>
                       <Card.Meta className="mb-4">{data.me.homeCity.name}</Card.Meta>
                       <Card.Description >
-                        <Statistic>
-                          <Statistic.Label>Population</Statistic.Label>
-                          <Statistic.Value>{numbersWithCommas(data.me.homeCity.population)}</Statistic.Value>
+                        <Statistic size='small'>
+                          <Statistic.Label >Population</Statistic.Label>
+                          <Statistic.Value className="population">{numbersWithCommas(data.me.homeCity.population)}</Statistic.Value>
                         </Statistic>
                       </Card.Description>
                       {<Bar
