@@ -141,6 +141,20 @@ footer {
   overflow: hidden;
   border-radius: 5%;
   padding: 0 !important;
+  position: relative;
+  z-index: 1;
+}
+
+.statistic {
+  position: absolute;
+  z-index: 2;
+  top: 70%;
+  left: 5%;
+}
+
+.statistic .value, .statistic .label {
+  color: white !important;
+  text-shadow: 10px 10px 10px black;
 }
 
 .city-pic {
@@ -402,7 +416,7 @@ table.table-striped > tbody > tr:nth-of-type(even):hover {
   padding: 0;
 }
 
-.my-5 .card-header {
+.my-5 .card-header, .header-row {
   display: flex;
   align-items: center;
 }
@@ -487,7 +501,6 @@ table.table-striped > tbody > tr:nth-of-type(even):hover {
 
 .stats {
   display: block;
-  margin-right: 40px;
 }
 
 .stats .bold, .normal-size {
@@ -506,8 +519,12 @@ table.table-striped > tbody > tr:nth-of-type(even):hover {
 .ui.progress .bar>.progress{
   background: transparent;
   height: 20px;
-}
+} 
 
 .ui.progress.small .bar>.progress{
       margin-top: -9px;
+}
+
+.body-row, .header-row{
+  justify-content: space-between;
 }
