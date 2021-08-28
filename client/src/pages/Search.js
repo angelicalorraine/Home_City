@@ -3,14 +3,14 @@ import { searchCityData, searchBlank } from '../utils/API';
 import { useMutation, useQuery } from '@apollo/client';
 import { SAVE_CITY, SAVE_HOME_CITY } from '../utils/mutations';
 import { QUERY_ME } from '../utils/queries';
-import { numbersWithCommas } from '../utils/helpers'
+import { numbersWithCommas} from '../utils/helpers'
 import { Jumbotron, Form } from 'react-bootstrap';
 import Auth from '../utils/auth';
 import { Bar } from 'react-chartjs-2';
 import { faSearch, faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import AutoSearch from '../components/AutoSearch';
-import { Container, Button, Grid, Message, Statistic } from 'semantic-ui-react';
+import { Container, Button, Grid, Message, Statistic, Progress } from 'semantic-ui-react';
 import CityNames from '../utils/Cities';
 import BannerIntro from "../components/BannerIntro";
 
@@ -417,34 +417,49 @@ const Search = () => {
                           <Statistic.Value>{city.population}</Statistic.Value>
                     </Statistic>  
                   </div>
-                  <div>
-                    <span className="bold">Region: </span><span>{city.region}</span>
+                  <div className="mb-2">
+                    <span className="bold">Region </span><span>{city.region}</span>
                   </div>
-                  <div>
-                    <span className="bold">Healthcare: </span><span>{city.healthcare} of 10</span>
+                  <div className="stats">
+                  <span className="bold">Healthcare </span>
+                     <Progress size='small' color='gray' value={city.healthcare} total='10' progress='ratio'/>
                   </div>
-                  <div>
-                    <span className="bold">Taxation: </span><span>{city.taxation} of 10</span>
+                  <div className="stats">
+                    <span className="bold">Taxation </span>
+                     <Progress size='small' color='gray' value={city.taxation} total='10' progress='ratio'/>
                   </div>
-                  <div>
-                    <span className="bold">Education: </span><span>{city.education} of 10</span>
                   </div>
-                  <div>
-                    <span className="bold">Housing: </span><span>{city.housing} of 10</span>
+                  <div className="stats">
+                  <span className="bold">Education </span>
+                     <Progress size='small' color='gray' value={city.education} total='10' progress='ratio'/>
                   </div>
-                  <div>
-                    <span className="bold">Cost of Living: </span><span>{city.costOfLiving} of 10</span>
+                 
+                 <div className="stats">
+                    <span className="bold">Housing </span>
+                     <Progress size='small' color='gray' value={city.housing} total='10' progress='ratio'/>
                   </div>
-                  <div>
-                    <span className="bold">Safety: </span><span>{city.safety} of 10</span>
+                 
+                  <div className="stats">
+                    <span className="bold">Cost of Living </span>
+                     <Progress size='small' color='gray' value={city.costOfLiving} total='10' progress='ratio'/>
                   </div>
-                  <div>
-                    <span className="bold">Environmental Quality: </span><span>{city.environmentalQuality} of 10</span>
+                 
+                 <div className="stats">
+                    <span className="bold">Safety </span>
+                     <Progress size='small' color='gray' value={city.safety} total='10' progress='ratio'/>
                   </div>
-                  <div>
-                    <span className="bold">Economy: </span><span>{city.economy} of 10</span>
+                 
+                  <div className="stats">
+                    <span className="bold">Environmental Quality </span>
+                     <Progress size='small' color='gray' value={city.environmentalQuality}total='10' progress='ratio'/>
                   </div>
-                </div>
+                 
+                  <div className="stats">
+                    <span className="bold">Economy </span>
+                     <Progress size='small' color='gray' value={city.economy} total='10' progress='ratio'/>
+                  </div>
+                 
+                
               </Grid.Column>
               <Grid.Column className="image-cropper">
                 <img src={city.image} className="city-pic" alt="img not found"></img>
