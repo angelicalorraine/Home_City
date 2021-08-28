@@ -362,11 +362,11 @@ const Search = () => {
           //disabled save city button if logged in and search result is already saved
           
           return <div key={city.matching_full_name}>
-            <Grid stackable columns={2}>
+            <Grid className="mb-4" stackable columns={2}>
               <Grid.Column>
                 <div >
                   <h2>
-                    City: {city.matching_full_name}
+                    {city.matching_full_name}
                   </h2>
 
 
@@ -380,7 +380,7 @@ const Search = () => {
                         </div>
                       )
                   }
-                  <div className="text-center">
+                  <div className="mb-4">
                   {
 
                     Auth.loggedIn() &&
@@ -411,11 +411,12 @@ const Search = () => {
 
                   }
                   </div>
-                  <Statistic>
-                        <Statistic.Label>Population</Statistic.Label>
-                        <Statistic.Value>{city.population}</Statistic.Value>
-                  </Statistic>  
-
+                  <div className="mb-4">
+                    <Statistic>
+                          <Statistic.Label>Population</Statistic.Label>
+                          <Statistic.Value>{city.population}</Statistic.Value>
+                    </Statistic>  
+                  </div>
                   <div>
                     <span className="bold">Region: </span><span>{city.region}</span>
                   </div>
@@ -454,9 +455,8 @@ const Search = () => {
             </Grid>
 
 
-            <Container className="mt-4">
-            <h3>{city.matching_full_name}</h3>
-              <div>
+            <Container className="mt-4 mb-4">
+              <div className="mt-4">
                 <Bar
                   data={{
                     labels: ['Healthcare', 'Taxation', 'Education', 'Housing', 'Living', 'Safety', 'Environment', 'Economy'],
