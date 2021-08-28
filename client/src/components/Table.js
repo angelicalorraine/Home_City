@@ -36,7 +36,7 @@ const CityTable = () => {
                     return {
                         key: city._id,
                         value: city._id,
-                        text: city.name,
+                        text: city.region,
                         disabled: cityValue.length > 1 ? true : false
                     }
                 })
@@ -61,7 +61,7 @@ const CityTable = () => {
                             <thead>
                                 <tr>
                                     <th>City</th>
-                                    <th>{city1[0].name}</th>
+                                    <th>{city1[0].region}</th>
                                 </tr>
                             </thead>
                             <tbody>

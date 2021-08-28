@@ -14,11 +14,11 @@ const AppNavbar = () => {
 
     return (
         <React.Fragment>
-            <Navbar className='navi p-4' bg='dark' variant='dark' expand='lg'>
+            <Navbar className='navi p-1' bg='dark' variant='dark' expand='lg'>
                 <Container fluid>
                     <Navbar.Brand as={Link} to='/'>
-                        <span className="mx-5 h2">
-                             <FontAwesomeIcon className="home-logo" icon={faHome} />
+                        <span className="mx-3 h2">
+                            <FontAwesomeIcon className="home-logo" icon={faHome} />
                             Home City
                         </span>
                     </Navbar.Brand>
