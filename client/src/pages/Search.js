@@ -447,7 +447,7 @@ const Search = () => {
                  
                   <div className="stats">
                     <span className="bold">Cost of Living </span>
-                     <Progress size='small' color='gragreyy' value={city.costOfLiving} total='10' progress='ratio'/>
+                     <Progress size='small' color='grey' value={city.costOfLiving} total='10' progress='ratio'/>
                   </div>
                  
                  <div className="stats">

@@ -136,10 +136,10 @@ footer {
 
 .image-cropper {
   max-width: 500px;
-  max-height: 400px;
+  max-height: 300px;
   position: relative;
   overflow: hidden;
-  border-radius: 5%;
+  border-radius: 6px;
   padding: 0 !important;
   position: relative;
   z-index: 1;
@@ -527,4 +527,8 @@ table.table-striped > tbody > tr:nth-of-type(even):hover {
 
 .body-row, .header-row{
   justify-content: space-between;
+}
+
+.header-row h3 {
+  margin-top: 0;
 }
