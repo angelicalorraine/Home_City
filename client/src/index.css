@@ -490,7 +490,7 @@ table.table-striped > tbody > tr:nth-of-type(even):hover {
   margin-right: 40px;
 }
 
-.stats .bold {
+.stats .bold, .normal-size {
   font-size: 1rem;
   line-height: 1;
 }
