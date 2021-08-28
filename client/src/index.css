@@ -152,7 +152,8 @@ footer {
   left: 5%;
 }
 
-.statistic .value, .statistic .label {
+.statistic .value,
+.statistic .label {
   color: white !important;
   text-shadow: 10px 10px 10px black;
 }
@@ -416,7 +417,8 @@ table.table-striped > tbody > tr:nth-of-type(even):hover {
   padding: 0;
 }
 
-.my-5 .card-header, .header-row {
+.my-5 .card-header,
+.header-row {
   display: flex;
   align-items: center;
 }
@@ -503,28 +505,59 @@ table.table-striped > tbody > tr:nth-of-type(even):hover {
   display: block;
 }
 
-.stats .bold, .normal-size {
+.stats .bold,
+.normal-size {
   font-size: 1rem;
   line-height: 1;
 }
 
-.stats .ui.progress:last-child{
+.stats .ui.progress:last-child {
   margin: 0;
 }
 
-.stats .ui.progress .bar{
+.stats .ui.progress .bar {
   height: 20px;
 }
 
-.ui.progress .bar>.progress{
+.ui.progress .bar > .progress {
   background: transparent;
   height: 20px;
-} 
-
-.ui.progress.small .bar>.progress{
-      margin-top: -9px;
 }
 
-.body-row, .header-row{
+.ui.progress.small .bar > .progress {
+  margin-top: -9px;
+}
+
+.body-row,
+.header-row {
   justify-content: space-between;
+}
+
+.ui.red.progress .bar {
+  background-color: #f7809b61 !important;
+}
+
+.ui.blue.progress .bar {
+  background-color: #99c9f1 !important;
+}
+
+.ui.yellow.progress .bar {
+  background-color: #feb30059 !important;
+}
+
+.ui.teal.progress .bar {
+  background-color: #70cdcd !important;
+}
+.ui.purple.progress .bar {
+  background-color: #9a66ff75 !important;
+}
+.ui.orange.progress .bar {
+  background-color: #ff9f40ab !important;
+}
+.ui.violet.progress .bar {
+  background-color: #ca00ff3b !important;
+}
+
+.ui.green.progress .bar {
+  background-color: #a7f0ac !important;
 }
