@@ -371,7 +371,7 @@ const Search = () => {
                   {city.matching_full_name}
                 </h2>
                 <h3>
-                  <span className="bold">Region </span><span className="normal-size">{city.region}</span>
+                  Region {city.region}
                 </h3>
               </div>
               {Auth.loggedIn() ? (<div></div>) :
@@ -484,29 +484,25 @@ const Search = () => {
                         backgroundColor: [
                           'rgba(255, 99, 132, 0.2)',
                           'rgba(54, 162, 235, 0.2)',
-                          'rgba(153, 102, 255, 0.2)',
                           'rgba(255, 206, 86, 0.2)',
                           'rgba(75, 192, 192, 0.2)',
-                          'rgba(255, 159, 64, 0.2)',
-                          'rgba(223, 141, 243, 0.2)',
-                          'rgba(82, 255, 94, 0.2)'
+                          'rgba(153, 102, 255, 0.2)',
+                          'rgba(255, 159, 64, 0.2)'
                         ],
                         borderColor: [
                           'rgba(255, 99, 132, 1)',
                           'rgba(54, 162, 235, 1)',
-                          'rgba(153, 102, 255, 1)',
                           'rgba(255, 206, 86, 1)',
                           'rgba(75, 192, 192, 1)',
-                          'rgba(255, 159, 64, 1)',
-                          'rgba(223, 141, 243, 1)',
-                          'rgba(82, 255, 94, 1)',
+                          'rgba(153, 102, 255, 1)',
+                          'rgba(255, 159, 64, 1)'
                         ],
                         borderWidth: 1
                       }]
 
                   }}
                   height={400}
-                  width={250}
+                  width={500}
                   options={{
                     plugins: {
 
@@ -518,7 +514,7 @@ const Search = () => {
                     scales: {
                       y: {
                         suggestedMin: 0,
-                        suggestedMax: 5
+                        suggestedMax: 10
                       }
                     }
                   }}

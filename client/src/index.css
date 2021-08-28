@@ -136,24 +136,25 @@ footer {
 
 .image-cropper {
   max-width: 500px;
-  max-height: 400px;
+  max-height: 300px;
   position: relative;
   overflow: hidden;
-  border-radius: 5%;
+  border-radius: 6px;
   padding: 0 !important;
   position: relative;
   z-index: 1;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
 }
 
-.statistic {
+.body-row .statistic {
   position: absolute;
   z-index: 2;
-  top: 70%;
+  bottom: 10%;
   left: 5%;
 }
 
-.statistic .value,
-.statistic .label {
+.body-row .statistic .value,
+.body-row .statistic .label {
   color: white !important;
   text-shadow: 10px 10px 10px black;
 }
@@ -531,6 +532,7 @@ table.table-striped > tbody > tr:nth-of-type(even):hover {
 .body-row,
 .header-row {
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 .ui.red.progress .bar {
@@ -560,4 +562,7 @@ table.table-striped > tbody > tr:nth-of-type(even):hover {
 
 .ui.green.progress .bar {
   background-color: #a7f0ac !important;
+}
+.header-row h3 {
+  margin-top: 0;
 }
