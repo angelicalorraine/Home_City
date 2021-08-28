@@ -335,6 +335,13 @@ footer {
   text-align: left;
 }
 
+
+.extra.content span{
+  font-size: 1.3rem;
+  padding-left: 10px;
+  
+}
+
 .modal .nav-pills {
   padding-left: 15px;
   border-bottom: 1px solid #ccc;
