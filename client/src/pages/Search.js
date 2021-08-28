@@ -371,13 +371,15 @@ const Search = () => {
 
                   {Auth.loggedIn() ? (<div></div>) :
                     (
+                      <div className="sign-info">
                       <Message
                           info
                           content="Sign up or login using the link in the header for the ability to create a profile page and save cities to compare."
                         />
+                        </div>
                       )
                   }
-
+                  <div className="text-center">
                   {
 
                     Auth.loggedIn() &&
@@ -407,6 +409,7 @@ const Search = () => {
                     </Button>
 
                   }
+                  </div>
                   <Statistic>
                         <Statistic.Label>Population</Statistic.Label>
                         <Statistic.Value>{city.population}</Statistic.Value>
@@ -485,6 +488,10 @@ const Search = () => {
                   width={500}
                   options={{
                     plugins: {
+                       title: {
+                        display: true,
+                        text: `${city.matching_full_name}`,
+                        },
                       legend: {
                         display: false
                       }

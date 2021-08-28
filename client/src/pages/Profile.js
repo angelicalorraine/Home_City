@@ -186,7 +186,7 @@ const Profile = () => {
                         return (
                           <Tab.Pane eventKey={city.cityId} transition={Fade}>
                             <Row className="CityChartName">
-                              <h3> Viewing {city.name}
+                              <h3>{city.name}
                                 <Button variant="outline-danger delete" size="sm" onClick={() => handleDeleteCity(city.cityId)}>
                                   Delete city
                                 </Button></h3>
@@ -224,6 +224,7 @@ const Profile = () => {
                               options={
                                 {
                                   plugins: {
+                            
                                     legend: {
                                       display: false
                                     }
