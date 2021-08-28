@@ -19,7 +19,7 @@ import BannerIntro from "../components/BannerIntro";
 
 
 const Search = () => {
-  const[searching, setSearching] = useState(false);
+  const [searching, setSearching] = useState(false);
   const [validSearch, validateSearch] = useState(true);
   const { loading, error, data } = useQuery(QUERY_ME, {});
   console.log(error);
@@ -136,7 +136,7 @@ const Search = () => {
     try {
       // perform API call to teleport
       const response = await searchCityData(searchInput);
-      
+
 
       if (!response.ok) {
         throw new Error('something went wrong!');
@@ -151,10 +151,10 @@ const Search = () => {
       cityData[0]['population'] = numbersWithCommas(pop);
 
 
-      if(cityData[0]._embedded["city:item"]._embedded===undefined){
+      if (cityData[0]._embedded["city:item"]._embedded === undefined) {
         validateSearch(false);
         setSearchInput('');
-      }else{
+      } else {
         // store the category data into an array
         const uaScores = cityData[0]._embedded["city:item"]._embedded["city:urban_area"]._embedded["ua:scores"].categories;
         cityData[0].housing = Math.round(uaScores[0].score_out_of_10);
@@ -183,16 +183,16 @@ const Search = () => {
         const regionName = cityData[0]._embedded["city:item"]._embedded["city:urban_area"].full_name;
         cityData[0]['region'] = regionName;
 
-        validateSearch(true); 
+        validateSearch(true);
         setSearching(true);
         // Update the hook and empty the search field
         setSearchedCities(cityData);
         // setSearchedChart(cityData);
         setSearchInput('');
 
-        
+
       }
-      
+
 
 
     } catch (err) {
@@ -358,9 +358,9 @@ const Search = () => {
 
         {validSearch ? (searchedCities.map(city => {
           //console.log(city);
-          
+
           //disabled save city button if logged in and search result is already saved
-          
+
           return <div key={city.matching_full_name}>
             <Grid className="mb-4" stackable columns={2}>
               <Grid.Column>
@@ -373,48 +373,49 @@ const Search = () => {
                   {Auth.loggedIn() ? (<div></div>) :
                     (
                       <div className="sign-info">
-                      <Message
+                        <Message
                           info
                           content="Sign up or login using the link in the header for the ability to create a profile page and save cities to compare."
                         />
-                        </div>
-                      )
+                      </div>
+                    )
                   }
                   <div className="mb-4">
-                  {
+                    {
 
-                    Auth.loggedIn() &&
-                    <Button primary
-                      disabled={savedCityIds.includes(city.cityId + '') || savedCityIds.includes(city.cityId)}
-                      className='btn-block btn-info'
-                      id="saveCityBtn"
-                      onClick={() => handleSaveCity(city.cityId)}>
-                      {savedCityIds.includes(city.cityId + '') || savedCityIds.includes(city.cityId)
-                        ? 'City has been saved'
-                        : 'Save this City'}
-                    </Button>
-
-
-                  }
+                      Auth.loggedIn() &&
+                      <Button primary
+                        disabled={savedCityIds.includes(city.cityId + '') || savedCityIds.includes(city.cityId)}
+                        className='btn-block btn-info'
+                        id="saveCityBtn"
+                        onClick={() => handleSaveCity(city.cityId)}>
+                        {savedCityIds.includes(city.cityId + '') || savedCityIds.includes(city.cityId)
+                          ? 'City has been saved'
+                          : 'Save this City'}
+                      </Button>
 
 
-                  {
-                    (Auth.loggedIn() && !loading && error === undefined) &&
-                    <Button disabled={homeCityEqualsCurrent(data.me.homeCity, city)}
-                      id="saveHomeCityBtn"
-                      primary onClick={() => handleSaveHomeCity(city.cityId)}>
-                      {homeCityEqualsCurrent(data.me.homeCity, city)
-                        ? 'City is your Home City'
-                        : 'Set as Home City'
-                      }
-                    </Button>
-                  }
+                    }
+
+
+                    {
+                      (Auth.loggedIn() && !loading && error === undefined) &&
+                      <Button disabled={homeCityEqualsCurrent(data.me.homeCity, city)}
+                        id="saveHomeCityBtn"
+                        primary onClick={() => handleSaveHomeCity(city.cityId)}>
+                        {homeCityEqualsCurrent(data.me.homeCity, city)
+                          ? 'City is your Home City'
+                          : 'Set as Home City'
+                        }
+                      </Button>
+
+                    }
                   </div>
                   <div className="mb-4">
-                    <Statistic>
-                          <Statistic.Label>Population</Statistic.Label>
-                          <Statistic.Value>{city.population}</Statistic.Value>
-                    </Statistic>  
+                    <Statistic size='small'>
+                      <Statistic.Label>Population</Statistic.Label>
+                      <Statistic.Value>{city.population}</Statistic.Value>
+                    </Statistic>
                   </div>
                   <div className="mb-2">
                     <span className="bold">Region </span><span className="normal-size">{city.region}</span>
@@ -477,7 +478,7 @@ const Search = () => {
                     datasets: [
                       {
                         label: 'Score',
-                        
+
                         data: [`${city.healthcare}`, `${city.taxation}`, `${city.education}`, `${city.housing}`, `${city.costOfLiving}`, `${city.safety}`, `${city.environmentalQuality}`, `${city.economy}`],
 
                         backgroundColor: [
@@ -504,7 +505,7 @@ const Search = () => {
                   width={500}
                   options={{
                     plugins: {
-                  
+
                       legend: {
                         display: false
                       }
@@ -523,7 +524,7 @@ const Search = () => {
 
             </Container>
           </div>
-        })):(
+        })) : (
           <Message negative>
             <Message.Header>No cities found</Message.Header>
             <p>Try searching for a different city.</p>
