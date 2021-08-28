@@ -484,8 +484,13 @@ footer {
   margin-right: 40px;
 }
 
+.stats .bold {
+  font-size: 1rem;
+  line-height: 1;
+}
+
 .stats .ui.progress:last-child{
-  margin: 0 0 5px 0;
+  margin: 0;
 }
 
 .stats .ui.progress .bar{
@@ -495,4 +500,8 @@ footer {
 .ui.progress .bar>.progress{
   background: transparent;
   height: 20px;
+}
+
+.ui.progress.small .bar>.progress{
+      margin-top: -9px;
 }
