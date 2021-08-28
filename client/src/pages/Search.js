@@ -501,8 +501,8 @@ const Search = () => {
                       }]
 
                   }}
-                  height={400}
-                  width={500}
+                  height={350}
+                  width={450}
                   options={{
                     plugins: {
 

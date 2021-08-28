@@ -263,12 +263,19 @@ table.table-striped > tbody > tr:nth-of-type(even):hover {
   border-image: linear-gradient(45deg, #43cea28e, #185b9d94) 10;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  padding: 1.5rem;
+  padding: 1rem;
   margin-bottom: 1rem;
   text-align: center;
   border-radius: 0.28571429rem;
 }
 
+.overview {
+  margin-bottom: 0px !important;
+}
+
+.overviewCity {
+  margin-top: 0.5rem !important;
+}
 .CityChartName {
   padding: 1rem;
 }
