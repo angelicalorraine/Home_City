@@ -339,7 +339,7 @@ footer {
 .extra.content span{
   font-size: 1.3rem;
   padding-left: 10px;
-  
+
 }
 
 .modal .nav-pills {
@@ -385,7 +385,7 @@ footer {
   display: none;
 }
 
-.ui.message{
+.ui.message, .ui.fluid.dropdown{
   font-size: 1rem;
 }
 
