@@ -111,7 +111,7 @@ const Profile = () => {
                     <Image src={data.me.homeCity.image} wrapped ui={false} />
                     <Card.Content>
                       <Card.Meta className="mb-2">Home City</Card.Meta>
-                      <Card.Header className="mb-4">{data.me.homeCity.region}</Card.Header>
+                      <Card.Header className="mb-4">{data.me.homeCity.name}</Card.Header>
 
                       <Card.Description >
                         <Statistic size="tiny">
@@ -130,18 +130,22 @@ const Profile = () => {
                               backgroundColor: [
                                 'rgba(255, 99, 132, 0.2)',
                                 'rgba(54, 162, 235, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
                                 'rgba(255, 206, 86, 0.2)',
                                 'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
+                                'rgba(255, 159, 64, 0.2)',
+                                'rgba(223, 141, 243, 0.2)',
+                                'rgba(82, 255, 94, 0.2)',
                               ],
                               borderColor: [
                                 'rgba(255, 99, 132, 1)',
                                 'rgba(54, 162, 235, 1)',
+                                'rgba(153, 102, 255, 1)',
                                 'rgba(255, 206, 86, 1)',
                                 'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(223, 141, 243, 1)',
+                                'rgba(82, 255, 94, 1)',
                               ],
                               borderWidth: 1
                             }]
@@ -261,7 +265,7 @@ const Profile = () => {
                       return (
                         <Nav key={city.cityId} defaultActiveKey={city.cityId} variant="pills"  >
                           <Nav.Item >
-                            <Nav.Link className="p-2 pb-2" eventKey={city.cityId}> {city.region}</Nav.Link>
+                            <Nav.Link className="p-2 pb-2" eventKey={city.cityId}> {city.name}</Nav.Link>
                           </Nav.Item>
                         </Nav>)
                     })}
