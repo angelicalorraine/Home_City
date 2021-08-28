@@ -18,7 +18,7 @@ const BannerIntro = () => {
     {
       headerIcon: <FontAwesomeIcon icon={faCity} size="3x" />,
       title: "Compare",
-      text: " A decision making tool to visually compare each cities cost of living side by side to help find your future Home City  ."
+      text: " A decision making tool to visually compare each cities cost of living side by side to help find a place called Home."
 
     }
   ];
