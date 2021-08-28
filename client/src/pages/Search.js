@@ -371,7 +371,7 @@ const Search = () => {
                     {city.matching_full_name}
                   </h2>
                   <h3>
-                    <span className="bold">Region </span><span className="normal-size">{city.region}</span>
+                    Region {city.region}
                   </h3>
                 </div>
                   {Auth.loggedIn() ? (<div></div>) :
