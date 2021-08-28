@@ -137,8 +137,8 @@ const CityTable = () => {
                                 <thead>
                                     <tr>
                                         <th>City</th>
-                                        <th>{city1[0].name}</th>
-                                        <th>{city2[0].name}</th>
+                                        <th>{city1[0].region}</th>
+                                        <th>{city2[0].region}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
