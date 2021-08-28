@@ -418,7 +418,7 @@ const Search = () => {
                     </Statistic>  
                   </div>
                   <div className="mb-2">
-                    <span className="bold">Region </span><span>{city.region}</span>
+                    <span className="bold">Region </span><span className="normal-size">{city.region}</span>
                   </div>
                   <div className="stats">
                   <span className="bold">Healthcare </span>

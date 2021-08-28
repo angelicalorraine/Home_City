@@ -484,7 +484,7 @@ footer {
   margin-right: 40px;
 }
 
-.stats .bold {
+.stats .bold, .normal-size {
   font-size: 1rem;
   line-height: 1;
 }
