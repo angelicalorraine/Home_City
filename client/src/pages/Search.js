@@ -362,14 +362,18 @@ const Search = () => {
           //disabled save city button if logged in and search result is already saved
 
           return <div key={city.matching_full_name}>
-            <Grid className="mb-4" stackable columns={2}>
-              <Grid.Column>
-                
+           
+              
+
+                <div className="header-row">
+                <div>
                   <h2>
                     {city.matching_full_name}
                   </h2>
-
-
+                  <h3>
+                    <span className="bold">Region </span><span className="normal-size">{city.region}</span>
+                  </h3>
+                </div>
                   {Auth.loggedIn() ? (<div></div>) :
                     (
                       <div className="sign-info">
@@ -411,61 +415,57 @@ const Search = () => {
 
                     }
                   </div>
-                  <div className="mb-4">
-                    <Statistic size='small'>
+              </div> 
+               <Grid className="mb-4 mt-4 body-row" stackable columns={2}>
+              <Grid.Column className="image-cropper">
+                <img src={city.image} className="city-pic" alt="img not found"></img>
+                  <Statistic size='small'>
                       <Statistic.Label>Population</Statistic.Label>
                       <Statistic.Value>{city.population}</Statistic.Value>
                     </Statistic>
-                  </div>
-                  <div className="mb-2">
-                    <span className="bold">Region </span><span className="normal-size">{city.region}</span>
-                  </div>
+              </Grid.Column>
+              <Grid.Column>
+                  
                   <div className="stats">
                   <span className="bold">Healthcare </span>
-                     <Progress size='small' color='gray' value={city.healthcare} total='10' progress='ratio'/>
+                     <Progress size='small' color='grey' value={city.healthcare} total='10' progress='ratio'/>
                   </div>
                   <div className="stats">
                     <span className="bold">Taxation </span>
-                     <Progress size='small' color='gray' value={city.taxation} total='10' progress='ratio'/>
+                     <Progress size='small' color='grey' value={city.taxation} total='10' progress='ratio'/>
                   </div>
                   
                   <div className="stats">
                   <span className="bold">Education </span>
-                     <Progress size='small' color='gray' value={city.education} total='10' progress='ratio'/>
+                     <Progress size='small' color='grey' value={city.education} total='10' progress='ratio'/>
                   </div>
                  
                  <div className="stats">
                     <span className="bold">Housing </span>
-                     <Progress size='small' color='gray' value={city.housing} total='10' progress='ratio'/>
+                     <Progress size='small' color='grey' value={city.housing} total='10' progress='ratio'/>
                   </div>
                  
                   <div className="stats">
                     <span className="bold">Cost of Living </span>
-                     <Progress size='small' color='gray' value={city.costOfLiving} total='10' progress='ratio'/>
+                     <Progress size='small' color='gragreyy' value={city.costOfLiving} total='10' progress='ratio'/>
                   </div>
                  
                  <div className="stats">
                     <span className="bold">Safety </span>
-                     <Progress size='small' color='gray' value={city.safety} total='10' progress='ratio'/>
+                     <Progress size='small' color='grey' value={city.safety} total='10' progress='ratio'/>
                   </div>
                  
                   <div className="stats">
                     <span className="bold">Environmental Quality </span>
-                     <Progress size='small' color='gray' value={city.environmentalQuality}total='10' progress='ratio'/>
+                     <Progress size='small' color='grey' value={city.environmentalQuality}total='10' progress='ratio'/>
                   </div>
                  
                   <div className="stats">
                     <span className="bold">Economy </span>
-                     <Progress size='small' color='gray' value={city.economy} total='10' progress='ratio'/>
+                     <Progress size='small' color='grey' value={city.economy} total='10' progress='ratio'/>
                   </div>
                  
                 
-              </Grid.Column>
-              <Grid.Column className="image-cropper">
-                <img src={city.image} className="city-pic" alt="img not found"></img>
-
-
-
               </Grid.Column>
             </Grid>
 
