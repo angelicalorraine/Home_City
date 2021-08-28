@@ -27,10 +27,10 @@ const Profile = () => {
   if (!userData?.username) {
     return (
       <div className="p-5">
-          <Message negative>
+        <Message negative>
           <Message.Header>Additional privileges needed in order to view this page</Message.Header>
-              <p>You must to be logged in to view this page. Use navigation links above to
-              sign up or log in.</p>
+          <p>You must to be logged in to view this page. Use navigation links above to
+            sign up or log in.</p>
         </Message>
       </div>
     );
@@ -76,20 +76,22 @@ const Profile = () => {
             <Container>
               <Card fluid>
                 <Card.Content className="text-left">
-                  <Card.Header><h1>{data.me.username}</h1></Card.Header>
-                  <Card.Meta>{data.me.email}</Card.Meta>
-                  <Card.Description>
+                  <Card.Header className="mb-2"><h1>{data.me.username}</h1></Card.Header>
+                  <Card.Meta className="mb-3">{data.me.email}</Card.Meta>
+                  <Card.Meta className="mb-3">{data.me.homeCity &&
+                    <h3>{data.me.username} is currently living in {data.me.homeCity.name.split(',')[0]}.</h3>}</Card.Meta>
+                  {/* <Card.Description className="text-left">
                     {data.me.homeCity &&
                       <h3>{data.me.username} is currently living in {data.me.homeCity.name.split(',')[0]}.</h3>}
 
-                  </Card.Description>
+                  </Card.Description> */}
 
                 </Card.Content>
                 <Card.Content extra>
                   <div className="display-flex align-center ">
                     <Icon disabled name='building' size='large' />
-                    <span>{data.me.savedCities.length}&nbsp; 
-                    {data.me.savedCities.length === 1 ? 'city' : 'cities'} saved</span>
+                    <span>{data.me.savedCities.length}&nbsp;
+                      {data.me.savedCities.length === 1 ? 'city' : 'cities'} saved</span>
                   </div>
                 </Card.Content>
                 {
@@ -105,63 +107,64 @@ const Profile = () => {
               </Card>
               {
                 data.me.homeCity
-                  ? <Card fluid className="mb-5">
+                  ? <Card fluid className="mb-4">
                     <Image src={data.me.homeCity.image} wrapped ui={false} />
                     <Card.Content>
-                      <Card.Header>{data.me.homeCity.name.split(',')[0]}</Card.Header>
-                      <Card.Meta className="mb-4">{data.me.homeCity.name}</Card.Meta>
-                      <Card.Description >
-                      <Statistic>
-                        <Statistic.Label>Population</Statistic.Label>
-                        <Statistic.Value>{numbersWithCommas(data.me.homeCity.population)}</Statistic.Value>
-                     </Statistic>                   
-                      </Card.Description>
-                         {<Bar
-                              data={{
-                                labels: ['Healthcare', 'Taxation', 'Education', 'Housing', 'Living', 'Safety', 'Environment', 'Economy'],
-                                datasets: [
-                                  {
-                                    label: 'Score',
-                                    data: [`${data.me.homeCity.healthcare}`, `${data.me.homeCity.taxation}`, `${data.me.homeCity.education}`, `${data.me.homeCity.housing}`, `${data.me.homeCity.costOfLiving}`, `${data.me.homeCity.safety}`, `${data.me.homeCity.environmentalQuality}`, `${data.me.homeCity.economy}`],
+                      <Card.Meta className="mb-2">Home City</Card.Meta>
+                      <Card.Header className="mb-4">{data.me.homeCity.region}</Card.Header>
 
-                                    backgroundColor: [
-                                      'rgba(255, 99, 132, 0.2)',
-                                      'rgba(54, 162, 235, 0.2)',
-                                      'rgba(255, 206, 86, 0.2)',
-                                      'rgba(75, 192, 192, 0.2)',
-                                      'rgba(153, 102, 255, 0.2)',
-                                      'rgba(255, 159, 64, 0.2)'
-                                    ],
-                                    borderColor: [
-                                      'rgba(255, 99, 132, 1)',
-                                      'rgba(54, 162, 235, 1)',
-                                      'rgba(255, 206, 86, 1)',
-                                      'rgba(75, 192, 192, 1)',
-                                      'rgba(153, 102, 255, 1)',
-                                      'rgba(255, 159, 64, 1)'
-                                    ],
-                                    borderWidth: 1
-                                  }]
-                              }}
-                              height={60}
-                              width={200}
-                              options={
-                                {
-                                  plugins: {
-                                    legend: {
-                                      display: false
-                                    }
-                                },
-                                responsive: true,
-                                maintainAspectRatio: true,
-                                scales: {
-                                  y: {
-                                    suggestedMin: 0,
-                                    suggestedMax: 5
-                                  }
-                                }
-                              }}
-                            />} 
+                      <Card.Description >
+                        <Statistic size="tiny">
+                          <Statistic.Label >Population</Statistic.Label>
+                          <Statistic.Value className="population mb-3">{numbersWithCommas(data.me.homeCity.population)}</Statistic.Value>
+                        </Statistic>
+                      </Card.Description>
+                      {<Bar
+                        data={{
+                          labels: ['Healthcare', 'Taxation', 'Education', 'Housing', 'Living', 'Safety', 'Environment', 'Economy'],
+                          datasets: [
+                            {
+                              label: 'Score',
+                              data: [`${data.me.homeCity.healthcare}`, `${data.me.homeCity.taxation}`, `${data.me.homeCity.education}`, `${data.me.homeCity.housing}`, `${data.me.homeCity.costOfLiving}`, `${data.me.homeCity.safety}`, `${data.me.homeCity.environmentalQuality}`, `${data.me.homeCity.economy}`],
+
+                              backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+                              ],
+                              borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                              ],
+                              borderWidth: 1
+                            }]
+                        }}
+                        height={70}
+                        width={200}
+                        options={
+                          {
+                            plugins: {
+                              legend: {
+                                display: false
+                              }
+                            },
+                            responsive: true,
+                            maintainAspectRatio: true,
+                            scales: {
+                              y: {
+                                suggestedMin: 0,
+                                suggestedMax: 5
+                              }
+                            }
+                          }}
+                      />}
                     </Card.Content>
 
                   </Card>
@@ -176,8 +179,8 @@ const Profile = () => {
               <h2> City Compare</h2>
               <CityTable />
             </Container>
-            <Container className="data"> <h2>  
-            {userData.cityCount > 0 ? `Your ${userData.cityCount} Saved Cities!` : 'You have 0 saved cities.'} </h2> </Container>
+            <Container className="data"> <h2>
+              {userData.cityCount > 0 ? `Your ${userData.cityCount} Saved Cities!` : 'You have 0 saved cities.'} </h2> </Container>
 
             <Container className="scores">
               <Tab.Container className="" sm={12} id="left-tabs-example" >
@@ -226,20 +229,20 @@ const Profile = () => {
                               options={
                                 {
                                   plugins: {
-                            
+
                                     legend: {
                                       display: false
                                     }
-                                },
-                                responsive: true,
-                                maintainAspectRatio: true,
-                                scales: {
-                                  y: {
-                                    suggestedMin: 0,
-                                    suggestedMax: 5
+                                  },
+                                  responsive: true,
+                                  maintainAspectRatio: true,
+                                  scales: {
+                                    y: {
+                                      suggestedMin: 0,
+                                      suggestedMax: 5
+                                    }
                                   }
-                                }
-                              }}
+                                }}
                             />}
 
                           </Tab.Pane>)
@@ -252,7 +255,7 @@ const Profile = () => {
                       return (
                         <Nav key={city.cityId} defaultActiveKey={city.cityId} variant="pills"  >
                           <Nav.Item >
-                            <Nav.Link className="p-2 pb-2" eventKey={city.cityId}> {city.name}</Nav.Link>
+                            <Nav.Link className="p-2 pb-2" eventKey={city.cityId}> {city.region}</Nav.Link>
                           </Nav.Item>
                         </Nav>)
                     })}
