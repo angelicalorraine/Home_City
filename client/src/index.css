@@ -484,3 +484,21 @@ table.table-striped > tbody > tr:nth-of-type(even):hover {
 .fa-3x {
   font-size: 5rem !important;
 }
+
+.stats {
+  display: block;
+  margin-right: 40px;
+}
+
+.stats .ui.progress:last-child{
+  margin: 0 0 5px 0;
+}
+
+.stats .ui.progress .bar{
+  height: 20px;
+}
+
+.ui.progress .bar>.progress{
+  background: transparent;
+  height: 20px;
+}
