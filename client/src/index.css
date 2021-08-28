@@ -147,16 +147,18 @@ footer {
 }
 
 .body-row .statistic {
-  position: absolute;
-  z-index: 2;
-  bottom: 10%;
-  left: 5%;
+    position: absolute;
+    z-index: 2;
+    bottom: 10%;
+    left: 0;
+    background: rgba(0,0,0,.7);
+    border-radius: 0 30px 30px 0;
+    padding: 10px 30px 10px 20px;
 }
 
 .body-row .statistic .value,
 .body-row .statistic .label {
   color: white !important;
-  text-shadow: 10px 10px 10px black;
 }
 
 .city-pic {
@@ -524,7 +526,7 @@ table.table-striped > tbody > tr:nth-of-type(even):hover {
 }
 
 .stats .ui.progress .bar {
-  height: 20px;
+  height: 15px;
 }
 
 .ui.progress .bar > .progress {
@@ -533,7 +535,7 @@ table.table-striped > tbody > tr:nth-of-type(even):hover {
 }
 
 .ui.progress.small .bar > .progress {
-  margin-top: -9px;
+  margin-top: -7px;
 }
 
 .body-row,
