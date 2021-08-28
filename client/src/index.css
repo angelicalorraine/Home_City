@@ -149,7 +149,7 @@ footer {
 .body-row .statistic {
   position: absolute;
   z-index: 2;
-  top: 70%;
+  bottom: 10%;
   left: 5%;
 }
 
