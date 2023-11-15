@@ -22,27 +22,30 @@ const AppNavbar = () => {
                             Home City
                         </span>
                     </Navbar.Brand>
-                    <Navbar.Toggle aria-controls='navbar' />
-                    <Navbar.Collapse id='navbar'>
-                        <Nav className='ml-auto'>
-                            <Nav.Link as={Link} to='/'>
-                                Search Cities
-                            </Nav.Link>
-                            {/* if user is logged in show saved books and logout */}
-                            {Auth.loggedIn() ? (
-                                <>
-                                    <Nav.Link as={Link} to='/profile'>
-                                        Profile
-                                    </Nav.Link>
-                                    <Nav.Link onClick={Auth.logout} as={Link} to='/' >Logout</Nav.Link>
-                                </>
-                            ) : (
-                                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
-                            )}
-                        </Nav>
-                    </Navbar.Collapse>
+
                 </Container>
             </Navbar>
+            <Navbar.Toggle aria-controls='navbar' />
+            <Navbar.Collapse id='navbar'>
+                <Nav className='ml-auto'>
+                    <Nav.Link as={Link} to='/'>
+                        Search Cities
+                    </Nav.Link>
+                    {/* if user is logged in show saved books and logout */}
+                    {Auth.loggedIn() ? (
+                        <>
+                            <Nav.Link as={Link} to='/profile'>
+                                Profile
+                            </Nav.Link>
+                            <Nav.Link onClick={Auth.logout} as={Link} to='/' >Logout</Nav.Link>
+                        </>
+                    ) : (
+                        <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
+                    )}
+                </Nav>
+            </Navbar.Collapse>
+
+
             {/* set modal data up */}
             <Modal
                 size='lg'

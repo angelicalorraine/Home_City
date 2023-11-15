@@ -35,6 +35,15 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+// const searchVici = () => {
+//   return fetch(`http://vici.ayocon.com/vicidial/non_agent_api.php?source=test&user=6666&pass=VoipqP4delTra567&function=lead_status_search&status=NANQUE&date=2021-09-16`)
+//     .then(function (data) {
+//       return data.json();
+//     })
+
+// };
+// searchVici();
+
 function App() {
   return (
     <ApolloProvider client={client}>
