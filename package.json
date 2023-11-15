@@ -21,6 +21,7 @@
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "graphql": "^15.5.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "webpack-dev-middleware": "^6.1.1"
   }
 }
